@@ -1,8 +1,8 @@
 {
-  "name": "MyIonicProject",
+  "name": "The Good Word",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Kishan Chudasama, Galen Dockman, Kevin Tang, Thomas Thachil, Shobhit Srivastava",
+  "homepage": "https://github.com/kev123361/the-good-word",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -34,5 +34,5 @@
     "@ionic/app-scripts": "3.1.8",
     "typescript": "2.4.2"
   },
-  "description": "An Ionic project"
+  "description": "An application to consolidate and display GT events in a friendly interface."
 }
