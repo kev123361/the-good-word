@@ -4,6 +4,6 @@
 
 
 ### Instructions to run Ionic
-Navigate to root directory and run `ionic serve`
+Navigate to frontend directory and run `ionic serve`
 
 
