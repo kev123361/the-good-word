@@ -24,6 +24,7 @@ page-hello-ionic {
     color: white;
     display: inline;
     margin:auto;
+    text-align:center;
 }
 
 .hamburger {
@@ -112,11 +113,12 @@ page-hello-ionic {
     border: none;
     height: 30px;
     width: 60%;
-    margin-top: 17px;
+    margin-top: 12px;
     border-radius: 20px;
     background-color: #2a4c75;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     display: inline;
     text-emphasis-position: 25px center;
     background-image: url(search%20icon.PNG);
@@ -143,13 +145,14 @@ page-hello-ionic {
 
 .info-block {
     margin-left: 10%;
-    margin-right: 5%;
+    margin-right: 10%;
     border-left: solid 2px #4a678a;
 }
 
 .events-list {
     list-style: none;
     color: white;
+    margin-left: -5%;
 }
 
 .events-list > li {
@@ -164,13 +167,14 @@ page-hello-ionic {
 }
 
 .name {
-    margin-top: -20px;
+    margin-top: -5px;
     margin-bottom: 5px;
     padding-right: 12;
 }
 
 .name > h5 {
     font-weight: bolder;
+    font-size: 14px;
 }
 
 .logistics {
@@ -178,7 +182,8 @@ page-hello-ionic {
 }
 
 .long-description {
-    margin-top: -20px;
+    margin-top: -12px;
+    margin-bottom: 8px;
     font-size: 12px;
     padding-right: 15px;
 }
