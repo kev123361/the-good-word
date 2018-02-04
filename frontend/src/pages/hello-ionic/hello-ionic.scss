@@ -1,3 +1,248 @@
 page-hello-ionic {
+	html, body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #123866;
+}
+
+
+
+
+/*header*/
+.header {
+    z-index: 2;
+    background-color: #e0af5d;
+    height: 50px;
+    display: flex;
+    box-shadow: 10px 10px 10px 10px black;
+}
+
+.header-text {
+    text-transform: uppercase;
+    font-style: black;
+    font-weight: bold;
+    color: white;
+    display: inline;
+    margin:auto;
+    text-align:center;
+}
+
+.hamburger {
+    color: white;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 30px;
+    border: none;
+    background: none;
+    background-image: url(hamburger%20icon.PNG);
+    background-size: 20px 25px;
+    background-repeat: no-repeat;
+    background-position: center
+    
+}
+
+/*nav*/
+
+.nav {
+    display:block;
+    position:absolute;
+    width:300px;
+    height: 100%;
+    display: flex;
+    z-index: 3;
+    background-color: #0f2640;
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    transition: transform 0.3s ease;
+}
+
+.nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    box-shadow: 1px 3px 3px 0 black
+}
+
+.nav-list {
+    list-style: none;
+    width: 100%;
+    margin-top: 25px;
+
+}
+
+.nav-item {
+    width: 100%;
+    height: 20px;
+    color: white;
+    text-transform: uppercase;
+    margin-left: -10px;
+    margin-bottom: 30px;
+    color: grey;
+    font-size: 20px;
+}
+
+.nav-item-div {
+    display: flex;
+}
+
+.nav-text {
+    margin-left: 20px;
+    color: white;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.fa-user {
+    margin-left: 2px;
+}
+
+/*main*/
+
+.main {
+    background-color: #123866;
+    box-shadow: inset 0px 1px 0px 0 black;
+}
+
+/*search*/
+
+.search {
+    display: flex
+}
+
+.search-bar {
+    opacity: 0.8;
+    border: none;
+    height: 30px;
+    width: 60%;
+    margin-top: 12px;
+    border-radius: 20px;
+    background-color: #2a4c75;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: inline;
+    text-emphasis-position: 25px center;
+    background-image: url(search%20icon.PNG);
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: 10px center;
+    padding-left: 11%;
+    padding-right: 5%;
+    color: white;
+}
+
+.search-bar::placeholder {
+    color: white;
+}
+
+/*events*/
+
+.title {
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #e0af5d
+}
+
+.info-block {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-left: solid 2px #4a678a;
+}
+
+.events-list {
+    list-style: none;
+    color: white;
+    margin-left: -5%;
+}
+
+.events-list > li {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-bottom: 20px
+}
+
+.description {
+    width: 60%;
+}
+
+.name {
+    margin-top: -5px;
+    margin-bottom: 5px;
+    padding-right: 12;
+}
+
+.name > h5 {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.logistics {
+    width: 40%;
+}
+
+.long-description {
+    margin-top: -12px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    padding-right: 15px;
+}
+
+.logistics {
+    text-align: right;
+    font-size: 12px;
+}
+
+.time {
+    margin-bottom: 15px;
+}
+
+.more-container {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #e0af5d;
+    text-align: right;
+}
+
+/*footer*/
+
+footer {
+    display: flex;
+    height: 45px;
+    width:80%;
+    margin:auto;
+    margin-top: 20px;;
+}
+
+.overview-container {
+    width: 50%;
+    display: flex;
+}
+
+.overview-button {
+    margin: auto;
+    border: none;
+    background: none;
+    color: #e0af5d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.calendar-container {
+    width:50%;
+    display: flex;
+    
+}
+
+.calendar-button {
+    margin: auto;
+    color: white;
+    border: none;
+    background: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+
 
 }
