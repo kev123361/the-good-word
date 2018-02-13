@@ -3,18 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>The Good Word</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list>
-    	<ion-item>
-    		<h2>Aliens vs. Zombies</h2>
-    		<p>blahblahblahblah</p>
-    		<button ion-button clear item-end (click)="buttonEvent()">See More</button>
-    	</ion-item>
-    </ion-list>
-
+    <ion-card>
+        <ion-card-header>Today</ion-card-header>
+        <ion-list>
+            <button ion-item *ngFor="let item of todayItems" (click)="itemSelected(item)">
+    	      	<h2>{{item.name}}</h2>
+                <p>{{item.time}}</p>
+                <p>{{item.location}}</p>
+            </button>
+        </ion-list>
+    </ion-card>
 </ion-content>
