@@ -1,0 +1,87 @@
+{
+	"data": [{
+			"description": "This past year has been a tumultuous year full of injustices and disappointments, alongside victories and inspiring solidarity. If we have learned one thing, it is that our voices can positively effect change. We have vowed to be SILENT NO MORE. Join us on Saturday, March 10th, from 9am-5pm at the Historic Academy of Medicine at Georgia Tech for a day of workshops and speakers that are sure to show you just how valuable your voice is. We hope that you will learn how to raise your voice to transform your workplace, community, and the world. See you on March 10! #SilentNoMore -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- Registration Info: Early Bird Registration: February 1 - 8 Regular Registration: February 9 - 23 Link: goo.gl / frSUde ",
+			"end_time": "2018-03-10T17:00:00-0500",
+			"name": "Georgia Tech Women's Leadership Conference 2018",
+			"place": {
+				"name": "The Historic Academy of Medicine at Georgia Tech",
+				"location": {
+					"city": "Atlanta",
+					"country": "United States",
+					"latitude": 33.778430639282,
+					"longitude": -84.386431667119,
+					"state": "GA",
+					"street": "875 W Peachtree St NW",
+					"zip": "30309"
+				},
+				"id": "142213459239589"
+			},
+			"start_time": "2018-03-10T09:00:00-0500",
+			"id": "381397698970480"
+		},
+		{
+			"description": "Increase Your Impact, Propel Your Career Approved by PMI to issue PDUs to maintain PMP® Certification The Georgia Tech Alumni Association has partnered with the Scheller College of Business to offer a customized Executive Leadership Program(ELP) for Georgia Tech Alumni and friends.This four - day intensive program will help professionals develop new skills and perspectives to succeed in their organizations.The ELP will challenge them to think more strategically and effectively manage the critical factors that affect their company’ s growth and their careers.",
+			"end_time": "2018-03-15T15:00:00-0400",
+			"name": "Georgia Tech Executive Leadership Program",
+			"place": {
+				"name": "Scheller College of Business",
+				"location": {
+					"city": "Atlanta",
+					"country": "United States",
+					"latitude": 33.7763,
+					"longitude": -84.388,
+					"state": "GA",
+					"zip": "30308"
+				},
+				"id": "289595211148001"
+			},
+			"start_time": "2018-03-12T12:00:00-0400",
+			"event_times": [{
+					"id": "135829790541749",
+					"start_time": "2018-03-15T12:00:00-0400",
+					"end_time": "2018-03-15T15:00:00-0400",
+					"ticket_uri": "https://www.gtalumni.org/s/1481/alumni/17/interior-wide.aspx?sid=1481&gid=21&pgid=12233&cid=27054&ecid=27054&crid=0&calpgid=641&calcid=21773"
+				},
+				{
+					"id": "135829787208416",
+					"start_time": "2018-03-14T12:00:00-0400",
+					"end_time": "2018-03-14T15:00:00-0400",
+					"ticket_uri": "https://www.gtalumni.org/s/1481/alumni/17/interior-wide.aspx?sid=1481&gid=21&pgid=12233&cid=27054&ecid=27054&crid=0&calpgid=641&calcid=21773"
+				},
+				{
+					"id": "135829793875082",
+					"start_time": "2018-03-13T12:00:00-0400",
+					"end_time": "2018-03-13T15:00:00-0400",
+					"ticket_uri": "https://www.gtalumni.org/s/1481/alumni/17/interior-wide.aspx?sid=1481&gid=21&pgid=12233&cid=27054&ecid=27054&crid=0&calpgid=641&calcid=21773"
+				},
+				{
+					"id": "135829783875083",
+					"start_time": "2018-03-12T12:00:00-0400",
+					"end_time": "2018-03-12T15:00:00-0400",
+					"ticket_uri": "https://www.gtalumni.org/s/1481/alumni/17/interior-wide.aspx?sid=1481&gid=21&pgid=12233&cid=27054&ecid=27054&crid=0&calpgid=641&calcid=21773"
+				}
+			],
+			"id": "135829773875084"
+		},
+		{
+			"description": "Zoom: into yourself reflectively, or out, to see the a bird's eye view of your life and the world. How do ideas change the closer, or farther, we look at them? Our 2018 Conference speakers will be exploring these ideas through their own lenses on April 7th, and you don't want to miss it! If an Atlanta professional jumped to your mind who has an interesting perspective or story to share, nominate them to speak at tedxgeorgiatech.com. RSVP and stay tuned for updates!",
+			"end_time": "2018-04-07T16:00:00-0400",
+			"name": "TEDxGeorgiaTech 2018 Conference",
+			"place": {
+				"name": "The Historic Academy of Medicine at Georgia Tech",
+				"location": {
+					"city": "Atlanta",
+					"country": "United States",
+					"latitude": 33.778430639282,
+					"longitude": -84.386431667119,
+					"state": "GA",
+					"street": "875 W Peachtree St NW",
+					"zip": "30309"
+				},
+				"id": "142213459239589"
+			},
+			"start_time": "2018-04-07T11:00:00-0400",
+			"id": "521775804868121"
+		}
+	]
+}
