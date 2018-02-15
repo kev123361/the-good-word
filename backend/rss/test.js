@@ -51,7 +51,55 @@ getFeed (urlTestFeed, function (err, feedItems) {
 			}
 		console.log ("There are " + feedItems.length + " items in the feed.\n");
 		for (var i = 0; i < feedItems.length; i++) {
-			console.log ("Item #" + pad (i) + ": " + feedItems [i].title + ".\n");
+			var x = feedItems[i].summary;
+			x = x.replace(/<(?:.|\n)*?>/gm, '');
+			x = x.replaceAll('&nbsp;', '\n');
+			//console.log(x);
+			var title = feedItems[i].title;
+			var link = feedItems[i].link;
+			var date = x. extract("Date:\n", "Location:");
+			var summary = x.extract("Summary Sentence:\n", "Contact");
+			var location = x.extract("Location:\n", "Summary")
+			var description = x.extract("Contact:\n", "Fee:");
+			var cost = x.extract("Fee:\n", "Event");
+			var category = x.extract("Categories:\n", "");
+			console.log("Title: " + title);
+			console.log("Link: " + link);
+			console.log("Date: " + date);
+			console.log("Location: " + location);
+			console.log("Summary: " + summary);
+			//console.log("Description: " + description);
+			console.log("Cost: " + cost);
+			console.log("Category: " + category);
+			console.log('\n\n ------------ \n\n');
+			//console.log(feedItems[i].summary.replace(/<(?:.|\n)*?>/gm, ''));
+			//console.log ("Item #" + pad (i) + ": " + feedItems [i].title + ".\n");
 			}
 		}
 	});
+
+	String.prototype.replaceAll = function(search, replacement) {
+		var target = this;
+		return target.replace(new RegExp(search, 'g'), replacement);
+	};
+
+	String.prototype.extract = function(prefix, suffix) {
+		s = this;
+		var i = s.indexOf(prefix);
+		if (i >= 0) {
+			s = s.substring(i + prefix.length);
+		}
+		else {
+			return '';
+		}
+		if (suffix) {
+			i = s.indexOf(suffix);
+			if (i >= 0) {
+				s = s.substring(0, i);
+			}
+			else {
+			  return '';
+			}
+		}
+		return s;
+	};
