@@ -17,27 +17,30 @@ var oauth = require("oauth");
 // console.log(request);
 
 var token;
+const clubList = ['SympVibes', 'gtakpsi', 'infiniteharmony', 'gtscpc', 'nothinbuttreble', 'bookthegarage', 'gtgleeclub', 'gtsaa', 'taaltadka', 'gtorchestras', 'gtchamberchoir', 'gtwebdev', 'gtbands', 'gtcomputing', 'gtjazzstudies', 'vgdevgt'];
 
 
-request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=1956087834638225&client_secret={PUT SECRET HERE}&grant_type=client_credentials', function (err, res, body) {
+request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=1956087834638225&client_secret=2b0a3f1810e47b2a5887bb7c042352cc&grant_type=client_credentials', function (err, res, body) {
 	if (err) {
 		console.log(err);
 		console.log("Make sure you've put the app secret in the url.");
 	}
 	if (body) {
 		token = JSON.parse(body)["access_token"];
-		request.get(`https://graph.facebook.com/v2.12/gtakpsi/events?access_token=${token}`, function (err, res, body) {
-			if (err) {
-				console.log(err);
-			}
-			if (res) {
-				console.log(res.body);
-			}
-			if (body) {
-				console.log(res.body);
-			}
+		clubList.forEach(function (club) {
+			request.get(`https://graph.facebook.com/v2.12/${club}/events?access_token=${token}`, function (err, res, body) {
+				if (err) {
+					console.log(err);
+				}
+				if (res) {
+					console.log(JSON.parse(res.body));
+				}
+				if (body) {
+					console.log(JSON.parse(body));
+				}
 
-		});
+			});
+		})
 	}
 });
 
