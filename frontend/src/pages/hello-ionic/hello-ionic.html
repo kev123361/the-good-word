@@ -14,9 +14,20 @@
         <ion-list>
             <button ion-item *ngFor="let item of todayItems" (click)="itemSelected(item)">
     	      	<h2>{{item.name}}</h2>
-                <p>{{item.time}}</p>
-                <p>{{item.location}}</p>
+                <p>{{item.start_time}}</p>
+                <p>{{item.end_time}}</p>
             </button>
         </ion-list>
     </ion-card>
+    <ion-card>
+	    <ion-list>
+	    	<button ion-item *ngFor="let item of dataList | async" (click)="itemSelected(item)">
+	    		<h2>{{item.name}}</h2>
+	            <p>{{item.start_time}}</p>
+	            <p>{{item.end_time}}</p>
+	    	</button>
+	    </ion-list>
+	</ion-card>
+
+
 </ion-content>
