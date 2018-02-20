@@ -49,12 +49,13 @@ getFeed (urlTestFeed, function (err, feedItems) {
 				}
 			return (s);
 			}
+		
 		console.log ("There are " + feedItems.length + " items in the feed.\n");
+		var allEvents = [];
 		for (var i = 0; i < feedItems.length; i++) {
 			var x = feedItems[i].summary;
 			x = x.replace(/<(?:.|\n)*?>/gm, '');
 			x = x.replaceAll('&nbsp;', '\n');
-			//console.log(x);
 			var title = feedItems[i].title;
 			var link = feedItems[i].link;
 			var date = x. extract("Date:\n", "Location:");
@@ -63,15 +64,23 @@ getFeed (urlTestFeed, function (err, feedItems) {
 			var description = x.extract("Contact:\n", "Fee:");
 			var cost = x.extract("Fee:\n", "Event");
 			var category = x.extract("Categories:\n", "");
-			console.log("Title: " + title);
-			console.log("Link: " + link);
-			console.log("Date: " + date);
-			console.log("Location: " + location);
-			console.log("Summary: " + summary);
-			//console.log("Description: " + description);
-			console.log("Cost: " + cost);
-			console.log("Category: " + category);
-			console.log('\n\n ------------ \n\n');
+			var event = new Object();
+			event.title = title;
+			event.link = link;
+			event.date = date;
+			event.summary = summary;
+			event.location = location;
+			event.cost = cost;
+			event.category = category;
+			console.log(event);
+			// console.log("Title: " + title);
+			// console.log("Link: " + link);
+			// console.log("Date: " + date);
+			// console.log("Location: " + location);
+			// console.log("Summary: " + summary);
+			// console.log("Cost: " + cost);
+			// console.log("Category: " + category);
+			// console.log('\n\n ------------ \n\n');
 			//console.log(feedItems[i].summary.replace(/<(?:.|\n)*?>/gm, ''));
 			//console.log ("Item #" + pad (i) + ": " + feedItems [i].title + ".\n");
 			}
