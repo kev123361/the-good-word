@@ -11,34 +11,18 @@ import {Observable} from 'rxjs/Observable';
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-  todayItems: any[];
+  // todayItems: any[];
   dataList: Observable<any[]>;
   
     
   constructor(public navCtrl: NavController, public navParams: NavParams, private firebase:AngularFireDatabase) {
-    //this.items = createInitialItemList();
-    // this.firebase.getToken()
-    //   .then(token => console.log('The token is ${token}'))
-    //   .catch(error => console.error('Error getting token'));
-    
-    // this.firebase.activateFetched()
-    //   .then(result => {
-    //     console.log(JSON.stringify(result));
-    //     this.firebase.getValue("0")
-    //     .then(data => {
-    //       console.log(data);
-    //     });
-    //   });
-
-    // this.firebase.onTokenRefresh()
-    //   .subscribe((token: string) => console.log('Got a new token ${token}'));
 
     
-    this.todayItems = [];
+    /* this.todayItems = [];
     this.todayItems.push({ID: 0, name: "Aliens vs. Zombies", details: "some details", time: "11:00PM", location: "COC", source: "https://www.google.com"});
     this.todayItems.push({ID: 1, name: "Volleyball", details: "some details2", time: "13:00PM", location: "CULC", source: "https://www.facebook.com"});
-
-    this.dataList = firebase.list('data').valueChanges();
+ */
+    this.dataList = firebase.list('testdata').valueChanges();
     console.log(this.dataList);
     
     
