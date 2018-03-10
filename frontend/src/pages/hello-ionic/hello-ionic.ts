@@ -5,6 +5,7 @@ import {DetailPage} from '../detail/detail';
 //import {Firebase} from '@ionic-native/firebase';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
+import { SearchResultPage } from '../search-result/search-result';
 
 @Component({
   selector: 'page-hello-ionic',
@@ -37,6 +38,10 @@ export class HelloIonicPage {
 
   itemSelected(item) {
     this.navCtrl.push(DetailPage, {item: item});
+  }
+
+  search(item) {
+    this.navCtrl.push(SearchResultPage, {item: item});
   }
 
 }

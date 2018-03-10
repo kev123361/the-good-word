@@ -16,6 +16,7 @@ import { PlaceholderInfoPage } from '../pages/placeholder-info/placeholder-info'
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { SearchResultPage } from '../pages/search-result/search-result';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw",
@@ -33,7 +34,8 @@ export const firebaseConfig = {
     ItemDetailsPage,
     ListPage,
     PlaceholderInfoPage,
-    DetailPage
+    DetailPage,
+    SearchResultPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ export const firebaseConfig = {
     ItemDetailsPage,
     ListPage,
     PlaceholderInfoPage,
-    DetailPage
+    DetailPage,
+    SearchResultPage
   ],
   providers: [
     //Firebase,
