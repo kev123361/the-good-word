@@ -17,6 +17,15 @@ page-hello-ionic {
     box-shadow: 10px 10px 10px 10px black;
 }
 
+.toolbar-background {
+    background-color: #e0af5d
+}
+
+.ion-title {
+    text-transform: uppercase;
+    color: white;
+}
+
 .header-text {
     text-transform: uppercase;
     font-style: black;
@@ -162,6 +171,16 @@ page-hello-ionic {
     margin-bottom: 20px
 }
 
+.event_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list_divider {
+    margin-bottom: -10%
+    margin-topL -10%
+}
+
 .description {
     width: 60%;
 }
@@ -179,6 +198,10 @@ page-hello-ionic {
 
 .logistics {
     width: 40%;
+}
+
+.location_name {
+    text-align: right;
 }
 
 .long-description {
