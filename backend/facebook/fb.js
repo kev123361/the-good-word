@@ -1,24 +1,15 @@
 var request = require("request");
 var oauth = require("oauth");
-
-// const oauth_token = "1956087834638225.Cu6B68-bE-vO0lqDacod0K9sMnU";
-// const access_token = "EAAbzDTCId5EBAKkY9DwJ0zLIrED1RGJ9JlqKl01beBUgMKiWxqkZAjeTGTC7kLZByqrJEwbsnFt8YXBBG4ccIHStTdqVTnpeBQBYiUSLD0gewxgdhMaTfEfmBbfDrITWTZCMRsfFdIqCJvIXJFxDlwr85I8yfMwNrUAzkbIl09gFz1HZBfMd8APDWUyJPIYZD";
-
-// request.get('https://graph.facebook.com/v2.12/gtakpsi/events?oauth_token=graph.facebook.com/v2.12/gtakpsi/events&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1518839549&oauth_nonce=6mEIC8&oauth_version=1.0&oauth_signature=HFRjCCoxMQcCz2/4kaV60jAY2vc=',
-// 	function (err, res, body) {
-// 		if (err) {
-// 			console.log(err);
-// 		}
-// 		if (res) {
-// 			console.log(res);
-// 		}
-// ;})
-
-// console.log(request);
+var moment = require("moment");
+var firebase = require("firebase");
+var app = firebase.initializeApp({
+	apiKey: 'AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw',
+	databaseURL: 'https://the-good-word.firebaseio.com'
+});
 
 var token;
 const clubList = ['SympVibes', 'gtakpsi', 'infiniteharmony', 'gtscpc', 'nothinbuttreble', 'bookthegarage', 'gtgleeclub', 'gtsaa', 'taaltadka', 'gtorchestras', 'gtchamberchoir', 'gtwebdev', 'gtbands', 'gtcomputing', 'gtjazzstudies', 'vgdevgt'];
-
+var eventList = [];
 
 request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=1956087834638225&client_secret=2b0a3f1810e47b2a5887bb7c042352cc&grant_type=client_credentials', function (err, res, body) {
 	if (err) {
@@ -33,17 +24,37 @@ request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=19560
 					console.log(err);
 				}
 				if (res) {
-					console.log(JSON.parse(res.body));
+					var events = JSON.parse(res.body);
+					var events = events.data;
+					for (i = 0; i < events.length; i++) {
+						var event = events[i];
+						var input = {};
+						if (event.name) {
+							input.name = event.name;
+						}
+						if (event.description) {
+							input.description = event.description;
+						}
+						if (event.place && event.place.name) {
+							input.location_name = event.place.name | 'no name';
+						}
+						input.id = event.id;
+						input.url = `https://facebook.com/events/${input.id}`;
+						if (event.start_time) {
+							input.start_time = moment(event.start_time).format('h:mm a');
+						}
+						if (event.end_time) {
+							input.end_time = moment(event.end_time).format('h:mm a');
+						}
+						if (event.start_time) {
+							input.date = moment(event.start_time).format('YYYY-MM-DD');
+						}
+						var testNode = firebase.database().ref('testdata');
+						var newEventRef = testNode.push();
+						newEventRef.set(input);
+					}
 				}
-				if (body) {
-					console.log(JSON.parse(body));
-				}
-
 			});
 		})
 	}
 });
-
-
-
-
