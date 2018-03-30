@@ -27,6 +27,15 @@ export const firebaseConfig = {
   messagingSenderId: "705962135776"
 }
 
+export const environment = {
+  algolia: {
+    appId: '3OSGQFKZY1',
+    apiKey: '80f9fdda2d3b0e70074ba2b2815895cf',
+    indexName: 'name',
+    urlSync: false
+  }
+}
+
 @NgModule({
   declarations: [
     MyApp,

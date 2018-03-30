@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {PlaceholderInfoPage} from '../placeholder-info/placeholder-info';
 import { NavController, NavParams} from 'ionic-angular';
 import {DetailPage} from '../detail/detail';
@@ -7,6 +7,11 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import { SearchResultPage } from '../search-result/search-result';
 
+import instantsearch from 'instantsearch.js'
+import { searchBox } from 'instantsearch.js/es/widgets'
+import { analytics } from 'instantsearch.js/es/widgets'
+import {environment } from '../../environments/environment';
+
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
@@ -14,6 +19,7 @@ import { SearchResultPage } from '../search-result/search-result';
 export class HelloIonicPage {
   // todayItems: any[];
   dataList: Observable<any[]>;
+  algoliaSearch: any;
   
     
   constructor(public navCtrl: NavController, public navParams: NavParams, private firebase:AngularFireDatabase) {
@@ -26,15 +32,36 @@ export class HelloIonicPage {
     this.dataList = firebase.list('testdata').valueChanges();
     console.log(this.dataList);
     
-    
   }
 
-/*  buttonEvent(event, item) {
-    this.navCtrl.push(PlaceholderInfoPage, {
-      item: item
-    });
-  }*/
+  ngOnInit() {
+    const options = environment.algolia;
 
+    this.algoliaSearch = instantsearch(options);
+
+    this.algoliaSearch.addWidget(
+      searchBox({
+        container: '#search-box',
+        autofocus: false,
+        placeholder: 'placeholder',
+        magnifier: false,
+        searchOnEnterKeyPressOnly: true,
+        reset: false
+      })
+    );
+    this.algoliaSearch.addWidget(
+      analytics({
+        pushFunction: (query, state, results) => {
+          console.log(query)
+          console.log(state)
+          console.log(results)
+          this.search(results.hits);
+        }
+      })
+    )
+
+    this.algoliaSearch.start();
+  }
 
   itemSelected(item) {
     this.navCtrl.push(DetailPage, {item: item});
