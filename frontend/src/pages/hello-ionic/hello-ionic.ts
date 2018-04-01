@@ -46,7 +46,7 @@ export class HelloIonicPage {
         placeholder: 'placeholder',
         magnifier: false,
         searchOnEnterKeyPressOnly: true,
-        reset: false
+        reset: true
       })
     );
     this.algoliaSearch.addWidget(
@@ -55,7 +55,9 @@ export class HelloIonicPage {
           console.log(query)
           console.log(state)
           console.log(results)
-          this.search(results.hits);
+          if (state.query !== '') {
+            this.search(results.hits);
+          }
         }
       })
     )
