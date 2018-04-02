@@ -40,7 +40,11 @@ exports.updateContacts = functions.database.ref('/contacts/{contactId}').onWrite
       console.log('Contact updated in Algolia index', data.objectID)
     })
   
-  })
+  });
+
+
+  // Name fo the algolia index for contact content.
+  const ALGOLIA_INDEX_NAME = 'events';
   
   // Updates the search index when new contacts are created or updated.
   exports.updateEvents = functions.database.ref('/testdata/{eventId}').onWrite(event => {
