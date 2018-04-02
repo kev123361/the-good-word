@@ -18,6 +18,9 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/datab
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { SearchResultPage } from '../pages/search-result/search-result';
 
+import { GooglePlus } from '@ionic-native/google-plus';
+import { LoginPage } from '../pages/login/login';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw",
 	authDomain: "the-good-word.firebaseapp.com",
@@ -25,6 +28,15 @@ export const firebaseConfig = {
   projectId: "the-good-word",
   storageBucket: "the-good-word.appspot.com",
   messagingSenderId: "705962135776"
+}
+
+export const environment = {
+  algolia: {
+    appId: '3OSGQFKZY1',
+    apiKey: '80f9fdda2d3b0e70074ba2b2815895cf',
+    indexName: 'name',
+    urlSync: false
+  }
 }
 
 @NgModule({
@@ -35,7 +47,8 @@ export const firebaseConfig = {
     ListPage,
     PlaceholderInfoPage,
     DetailPage,
-    SearchResultPage
+    SearchResultPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -52,11 +65,13 @@ export const firebaseConfig = {
     ListPage,
     PlaceholderInfoPage,
     DetailPage,
-    SearchResultPage
+    SearchResultPage,
+    LoginPage
   ],
   providers: [
     //Firebase,
     AngularFireDatabase,
+    GooglePlus,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

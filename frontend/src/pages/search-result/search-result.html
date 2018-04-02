@@ -14,5 +14,22 @@
 
 
 <ion-content padding>
-	<h3>{{queryText}}</h3>
+	<!-- <h3>{{queryText}}</h3>
+	<div id="search-box">
+	</div>
+	<div id ="hits">
+	</div> -->
+	<ion-card>
+		<ion-list>
+	    	<button ion-item *ngFor="let item of resultList" (click)="itemSelected(item)">
+	    		<div class="event_list">
+	    			<h2>{{item.name}}</h2>    <p>{{item.city}}</p>
+	    		</div> 
+	            <p>{{item.start_time}}</p>
+	            <p>{{item.description}}</p>
+	            <ion-item-divider class="list_divider"></ion-item-divider>
+	    	</button>
+	    </ion-list>
+	</ion-card>
+
 </ion-content>

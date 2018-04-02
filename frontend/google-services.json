@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "705962135776",
+    "firebase_url": "https://the-good-word.firebaseio.com",
+    "project_id": "the-good-word",
+    "storage_bucket": "the-good-word.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705962135776:android:e4eb7a962ac0f767",
+        "android_client_info": {
+          "package_name": "io.ionic.thegoodword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705962135776-fmq2mjqpfllmqebirqhotdm05u1d4l11.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.thegoodword",
+            "certificate_hash": "3ccb2287098cc478b393d114da6c064db5d3ede2"
+          }
+        },
+        {
+          "client_id": "705962135776-2ufdiqemp6qui45i555ka59cm4jiv389.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Q9M8_QIZZJ-zBHLhantK1f01Z0UCgc0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705962135776-2ufdiqemp6qui45i555ka59cm4jiv389.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "705962135776-r7mo98luvmtudj2fdpfcbfebgefloeeb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "thegoodword"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

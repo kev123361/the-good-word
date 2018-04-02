@@ -7,15 +7,16 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
     <ion-card>
-    <ion-searchbar
+    <!-- <ion-searchbar
   		[showCancelButton] = "true"
   		[(ngModel)]="queryText" 
   		placeholder="Search" 
   		(search)="search(queryText)">
-  	</ion-searchbar>
+  	</ion-searchbar> -->
+  		<div id="search-box">
+		</div>
 	    <ion-list>
 	    	<button ion-item *ngFor="let item of dataList | async" (click)="itemSelected(item)">
 	    		<div class="event_list">
