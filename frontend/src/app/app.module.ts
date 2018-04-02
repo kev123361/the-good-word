@@ -18,6 +18,9 @@ import {AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/datab
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import { SearchResultPage } from '../pages/search-result/search-result';
 
+import { GooglePlus } from '@ionic-native/google-plus';
+import { LoginPage } from '../pages/login/login';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw",
 	authDomain: "the-good-word.firebaseapp.com",
@@ -44,7 +47,8 @@ export const environment = {
     ListPage,
     PlaceholderInfoPage,
     DetailPage,
-    SearchResultPage
+    SearchResultPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -61,11 +65,13 @@ export const environment = {
     ListPage,
     PlaceholderInfoPage,
     DetailPage,
-    SearchResultPage
+    SearchResultPage,
+    LoginPage
   ],
   providers: [
     //Firebase,
     AngularFireDatabase,
+    GooglePlus,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

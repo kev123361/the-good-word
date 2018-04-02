@@ -1,4 +1,9 @@
 var myProductName = "feedParserDemo"; myVersion = "0.4.3";
+var firebase = require("firebase");
+var app = firebase.initializeApp({
+	apiKey: 'AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw',
+	databaseURL: 'https://the-good-word.firebaseio.com'
+});
 
 
 const request = require ("request");
@@ -73,6 +78,9 @@ getFeed (urlTestFeed, function (err, feedItems) {
 			event.cost = cost;
 			event.category = category;
 			console.log(event);
+			var testNode = firebase.database().ref('testdata');
+			var newEventRef = testNode.push();
+			newEventRef.set(event);
 			// console.log("Title: " + title);
 			// console.log("Link: " + link);
 			// console.log("Date: " + date);

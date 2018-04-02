@@ -50,8 +50,17 @@ request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=19560
 							input.date = moment(event.start_time).format('YYYY-MM-DD');
 						}
 						var testNode = firebase.database().ref('testdata');
-						var newEventRef = testNode.push();
-						newEventRef.set(input);
+						//check if event already exists
+						var exists = false;
+						var query = testNode.orderByChild('id');
+						query = query.equalTo(input.id);
+						query.on('value', function(snapshot) {
+							exists = true;
+						});
+						if (!exists) {
+							var newEventRef = testNode.push();
+							newEventRef.set(input);
+						}
 					}
 				}
 			});
