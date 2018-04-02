@@ -43,32 +43,57 @@ exports.updateContacts = functions.database.ref('/contacts/{contactId}').onWrite
   });
 
 
-  // Name fo the algolia index for contact content.
-  const ALGOLIA_INDEX_NAME = 'events';
-  
-  // Updates the search index when new contacts are created or updated.
-  exports.updateEvents = functions.database.ref('/testdata/{eventId}').onWrite(event => {
+// Name fo the algolia index for contact content.
+const ALGOLIA_INDEX_NAME = 'events';
 
-    const index = algolia.initIndex(ALGOLIA_INDEX_NAME);
+// Updates the search index when new contacts are created or updated.
+exports.updateEvents = functions.database.ref('/testdata/{eventId}').onWrite(event => {
 
-    const eventId = event.params.eventId
-    const data = event.data.val()
+  const index = algolia.initIndex(ALGOLIA_INDEX_NAME);
 
-    if (!data) {
-      return index.deleteObject(eventId, (err) => {
-        if (err) throw err
-        console.log('Event removed from Algolia index', eventId)
-      })
-  
-    }
-  
-    data['objectID'] = eventId
-  
-    return index.saveObject(data, (err, content) => {
+  const eventId = event.params.eventId
+  const data = event.data.val()
+
+  if (!data) {
+    return index.deleteObject(eventId, (err) => {
       if (err) throw err
-      console.log('Event updated in Algolia index', data.objectID)
+      console.log('Event removed from Algolia index', eventId)
     })
-  
-  });
+
+  }
+
+  data['objectID'] = eventId
+
+  return index.saveObject(data, (err, content) => {
+    if (err) throw err
+    console.log('Event updated in Algolia index', data.objectID)
+  })
+
+});
 
 
+// // Get all contacts from Firebase
+// database.ref('/testdata').once('value', events => {
+//   // Build an array of all records to push to Algolia
+//   const records = [];
+//   events.forEach(event => {
+//     // get the key and data from the snapshot
+//     const eventKey = event.key;
+//     const eventData = event.val();
+//     // We set the Algolia objectID as the Firebase .key
+//     eventData.objectID = eventKey;
+//     // Add object for indexing
+//     records.push(eventData);
+//   });
+
+//   // Add or update new objects
+//   index
+//     .saveObjects(records)
+//     .then(() => {
+//       console.log('Events imported into Algolia');
+//     })
+//     .catch(error => {
+//       console.error('Error when importing contact into Algolia', error);
+//       process.exit(1);
+//     });
+// });
