@@ -6,7 +6,6 @@ var app = firebase.initializeApp({
 	apiKey: 'AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw',
 	databaseURL: 'https://the-good-word.firebaseio.com'
 });
-
 var token;
 const clubList = ['SympVibes', 'gtakpsi', 'infiniteharmony', 'gtscpc', 'nothinbuttreble', 'bookthegarage', 'gtgleeclub', 'gtsaa', 'taaltadka', 'gtorchestras', 'gtchamberchoir', 'gtwebdev', 'gtbands', 'gtcomputing', 'gtjazzstudies', 'vgdevgt'];
 var eventList = [];
@@ -36,7 +35,7 @@ request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=19560
 							input.description = event.description;
 						}
 						if (event.place && event.place.name) {
-							input.location_name = event.place.name | 'no name';
+							input.location_name = event.place.name;
 						}
 						input.id = event.id;
 						input.url = `https://facebook.com/events/${input.id}`;
@@ -49,18 +48,22 @@ request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=19560
 						if (event.start_time) {
 							input.date = moment(event.start_time).format('YYYY-MM-DD');
 						}
-						var testNode = firebase.database().ref('testdata');
-						//check if event already exists
-						var exists = false;
-						var query = testNode.orderByChild('id');
-						query = query.equalTo(input.id);
-						query.on('value', function(snapshot) {
-							exists = true;
-						});
-						if (!exists) {
-							var newEventRef = testNode.push();
-							newEventRef.set(input);
+						if (moment().isBefore(event.start_time)) {
+							var testNode = firebase.database().ref('data');
+							var newRef = testNode.push();
+							newRef.set(input);
 						}
+						// var testNode = firebase.database().ref('testdata');
+						//check if event already exists
+						// testNode.orderByChild("id").equalTo(input.id).on('value', function(snapshot) {
+						// 	if (!snapshot.val()) {
+						// 		//event doesn't exist
+						// 		console.log(input.name);
+						// 		testNode.push(input);
+						// 	}
+						// });
+						console.log(input.id);
+						
 					}
 				}
 			});
