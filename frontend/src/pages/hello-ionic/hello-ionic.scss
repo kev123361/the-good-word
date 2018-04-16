@@ -5,8 +5,26 @@ page-hello-ionic {
     background-color: #123866;
 }
 
+#search-input input {
+    font-size: 50px;
+    font-weight: 100;
+    width: 74%;
+}
 
+#search-input input:focus {
+    border-color: #ed5565;
+}
 
+.ais-SearchBox-submit svg {
+    fill: red;
+}
+.search-box {
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
 
 /*header*/
 .header {
