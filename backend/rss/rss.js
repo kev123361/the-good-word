@@ -1,4 +1,3 @@
-var myProductName = "feedParserDemo"; myVersion = "0.4.3";
 var firebase = require("firebase");
 var app = firebase.initializeApp({
 	apiKey: 'AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw',
@@ -27,7 +26,7 @@ function getFeed (urlfeed, callback) {
 	feedparser.on ("readable", function () {
 		try {
 			var item = this.read (), flnew;
-			if (item !== null) { //2/9/17 by DW
+			if (item !== null) {
 				feedItems.push (item);
 				}
 			}
@@ -95,11 +94,13 @@ getFeed (urlTestFeed, function (err, feedItems) {
 		}
 	});
 
+	//replace all characters in a string
 	String.prototype.replaceAll = function(search, replacement) {
 		var target = this;
 		return target.replace(new RegExp(search, 'g'), replacement);
 	};
 
+	//extract valid data from string
 	String.prototype.extract = function(prefix, suffix) {
 		s = this;
 		var i = s.indexOf(prefix);
