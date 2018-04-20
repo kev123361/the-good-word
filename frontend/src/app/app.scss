@@ -14,3 +14,12 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import "../pages/hello-ionic/hello-ionic";
+
+@font-face {
+    font-family: 'Montserrat';
+    src:url('../assets/fonts/Montserrat.woff2') format('woff2'),
+    url('../assets/font/Montserrat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

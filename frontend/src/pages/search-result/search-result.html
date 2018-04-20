@@ -23,11 +23,11 @@
 		<ion-list>
 	    	<button ion-item *ngFor="let item of resultList" (click)="itemSelected(item)">
 	    		<div class="event_list">
-	    			<h2>{{item.name}}</h2>    <p>{{item.city}}</p>
-	    		</div> 
-	            <p>{{item.start_time}}</p>
-	            <p>{{item.description}}</p>
-	            <ion-item-divider class="list_divider"></ion-item-divider>
+	    			<h2>{{item.name}}</h2>    
+	    			<p>{{item.location_name}}</p>
+	            	<p>{{item.start_time}}</p>
+	            	<p>{{item.description}}</p>
+	            </div> 
 	    	</button>
 	    </ion-list>
 	</ion-card>

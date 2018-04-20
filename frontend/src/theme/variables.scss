@@ -46,23 +46,23 @@ $colors: (
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
+$toolbar-ios-title-text-color: white;
+$font-family-ios-base: "Montserrat";
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 $toolbar-md-title-text-color: white;
-
 $background-color: #003057;
+$font-family-md-base: "Monteserrat";
 
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
+$font-family-wp-base: "Montserrat";
 
 
 
@@ -89,3 +89,4 @@ $background-color: #003057;
 
 @import "roboto";
 @import "noto-sans";
+
