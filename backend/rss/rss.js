@@ -43,7 +43,7 @@ function getFeed (urlfeed, callback) {
 		});
 	}
 
-console.log ("\n" + myProductName + " v" + myVersion + ".\n"); 
+//console.log ("\n" + myProductName + " v" + myVersion + ".\n"); 
 getFeed (urlTestFeed, function (err, feedItems) {
 	if (!err) {
 		function pad (num) { 
@@ -76,18 +76,18 @@ getFeed (urlTestFeed, function (err, feedItems) {
 			event.location = location;
 			event.cost = cost;
 			event.category = category;
-			console.log(event);
+			//console.log(event);
 			var testNode = firebase.database().ref('testdata');
 			var newEventRef = testNode.push();
 			newEventRef.set(event);
-			// console.log("Title: " + title);
-			// console.log("Link: " + link);
-			// console.log("Date: " + date);
-			// console.log("Location: " + location);
-			// console.log("Summary: " + summary);
-			// console.log("Cost: " + cost);
-			// console.log("Category: " + category);
-			// console.log('\n\n ------------ \n\n');
+			console.log("Title: " + title);
+			console.log("Link: " + link);
+			console.log("Date: " + date);
+			console.log("Location: " + location);
+			console.log("Summary: " + summary);
+			console.log("Cost: " + cost);
+			console.log("Category: " + category);
+			console.log('\n\n ------------ \n\n');
 			//console.log(feedItems[i].summary.replace(/<(?:.|\n)*?>/gm, ''));
 			//console.log ("Item #" + pad (i) + ": " + feedItems [i].title + ".\n");
 			}
