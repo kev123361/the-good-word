@@ -29,7 +29,7 @@ export class HelloIonicPage {
     this.todayItems.push({ID: 0, name: "Aliens vs. Zombies", details: "some details", time: "11:00PM", location: "COC", source: "https://www.google.com"});
     this.todayItems.push({ID: 1, name: "Volleyball", details: "some details2", time: "13:00PM", location: "CULC", source: "https://www.facebook.com"});
  */
-    this.dataList = firebase.list('testdata').valueChanges();
+    this.dataList = firebase.list('data').valueChanges();
     console.log(this.dataList);
     
   }
