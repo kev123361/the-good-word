@@ -7,7 +7,7 @@ var app = firebase.initializeApp({
 	databaseURL: 'https://the-good-word.firebaseio.com'
 });
 var token;
-const clubList = ['SympVibes', 'gtakpsi', 'infiniteharmony', 'gtscpc', 'nothinbuttreble', 'bookthegarage', 'gtgleeclub', 'gtsaa', 'taaltadka', 'gtorchestras', 'gtchamberchoir', 'gtwebdev', 'gtbands', 'gtcomputing', 'gtjazzstudies', 'vgdevgt'];
+const clubList = ['SympVibes', 'gtakpsi', 'infiniteharmony', 'gtscpc', 'nothinbuttreble', 'bookthegarage', 'gtgleeclub', 'gtsaa', 'taaltadka', 'gtorchestras', 'gtchamberchoir', 'gtwebdev', 'gtbands', 'gtcomputing', 'gtjazzstudies', 'vgdevgt', 'TEDxGeorgiaTech', 'GTDining', 'CDGaTech', 'crcatgt', 'GTHealthInitiatives', 'GTFootball', 'gtathletics', 'GeorgiaTechSWE', 'GTSGA', 'gtsolarracing', 'GaTechPD', 'GTcampusservices', 'gtsalsa', 'GTMockTrial', 'georgiatechcreatex', 'GTStuCen', 'employerrelationscoc', 'GaTechHousing', 'GTCatholic', 'nsbe.gtchapter', 'VIPGaTech', 'SchellerCollegeUndergraduate', 'GTInventionStudio', 'gtbaseball'];
 var eventList = [];
 
 request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=1956087834638225&client_secret=2b0a3f1810e47b2a5887bb7c042352cc&grant_type=client_credentials', function (err, res, body) {
@@ -53,17 +53,8 @@ request.get('https://graph.facebook.com/v2.12/oauth/access_token?client_id=19560
 							var newRef = testNode.push();
 							newRef.set(input);
 						}
-						// var testNode = firebase.database().ref('testdata');
-						//check if event already exists
-						// testNode.orderByChild("id").equalTo(input.id).on('value', function(snapshot) {
-						// 	if (!snapshot.val()) {
-						// 		//event doesn't exist
-						// 		console.log(input.name);
-						// 		testNode.push(input);
-						// 	}
-						// });
 						console.log(input.id);
-						
+				
 					}
 				}
 			});
