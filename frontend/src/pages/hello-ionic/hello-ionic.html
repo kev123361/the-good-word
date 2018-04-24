@@ -9,24 +9,19 @@
 
 <ion-content padding>
     <ion-card>
-    <!-- <ion-searchbar
-  		[showCancelButton] = "true"
-  		[(ngModel)]="queryText" 
-  		placeholder="Search" 
-  		(search)="search(queryText)">
-  	</ion-searchbar> -->
   		<div id="search-box" class ="search-box">
 
 		</div>
 	    <ion-list>
-	    	<ion-item-divider class="list_divider"></ion-item-divider>
+	    	
 	    	<button ion-item *ngFor="let item of dataList | async" (click)="itemSelected(item)">
-	    		<div class="event_list">
-	    			<h2>{{item.name}}</h2>    <p>{{item.location_name}}</p>
-	    		</div> 
-	            <p>{{item.start_time}}</p>
-	            <p>{{item.description}}</p>
-	            <ion-item-divider class="list_divider"></ion-item-divider>
+	    		<div class = "list-item">
+		    		<h2>{{item.name}}</h2>    
+						<p>{{item.location_name}}</p>
+								<p>{{item.date}}</p>
+		            <p>{{item.start_time}}</p>
+		            <p>{{item.description}}</p>
+	            </div>
 	    	</button>
 	    </ion-list>
 	</ion-card>

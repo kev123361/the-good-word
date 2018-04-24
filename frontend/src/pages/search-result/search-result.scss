@@ -1,3 +1,16 @@
 page-search-result {
+    html, body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: #123866;
+    }
+}
 
+.event_list {
+    h2 {
+        color: #eaaa00;
+    }
+    p {
+        color: #ffffff;
+    }
 }

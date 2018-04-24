@@ -1,4 +1,3 @@
-var myProductName = "feedParserDemo"; myVersion = "0.4.3";
 var firebase = require("firebase");
 var app = firebase.initializeApp({
 	apiKey: 'AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw',
@@ -27,7 +26,7 @@ function getFeed (urlfeed, callback) {
 	feedparser.on ("readable", function () {
 		try {
 			var item = this.read (), flnew;
-			if (item !== null) { //2/9/17 by DW
+			if (item !== null) {
 				feedItems.push (item);
 				}
 			}
@@ -44,7 +43,7 @@ function getFeed (urlfeed, callback) {
 		});
 	}
 
-console.log ("\n" + myProductName + " v" + myVersion + ".\n"); 
+//console.log ("\n" + myProductName + " v" + myVersion + ".\n"); 
 getFeed (urlTestFeed, function (err, feedItems) {
 	if (!err) {
 		function pad (num) { 
@@ -77,29 +76,31 @@ getFeed (urlTestFeed, function (err, feedItems) {
 			event.location = location;
 			event.cost = cost;
 			event.category = category;
-			console.log(event);
+			//console.log(event);
 			var testNode = firebase.database().ref('testdata');
 			var newEventRef = testNode.push();
 			newEventRef.set(event);
-			// console.log("Title: " + title);
-			// console.log("Link: " + link);
-			// console.log("Date: " + date);
-			// console.log("Location: " + location);
-			// console.log("Summary: " + summary);
-			// console.log("Cost: " + cost);
-			// console.log("Category: " + category);
-			// console.log('\n\n ------------ \n\n');
+			console.log("Title: " + title);
+			console.log("Link: " + link);
+			console.log("Date: " + date);
+			console.log("Location: " + location);
+			console.log("Summary: " + summary);
+			console.log("Cost: " + cost);
+			console.log("Category: " + category);
+			console.log('\n\n ------------ \n\n');
 			//console.log(feedItems[i].summary.replace(/<(?:.|\n)*?>/gm, ''));
 			//console.log ("Item #" + pad (i) + ": " + feedItems [i].title + ".\n");
 			}
 		}
 	});
 
+	//replace all characters in a string
 	String.prototype.replaceAll = function(search, replacement) {
 		var target = this;
 		return target.replace(new RegExp(search, 'g'), replacement);
 	};
 
+	//extract valid data from string
 	String.prototype.extract = function(prefix, suffix) {
 		s = this;
 		var i = s.indexOf(prefix);

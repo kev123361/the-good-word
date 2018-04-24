@@ -6,9 +6,10 @@ page-hello-ionic {
 }
 
 #search-input input {
-    font-size: 50px;
+    font-size: 5px;
     font-weight: 100;
     width: 74%;
+    color: #335161;
 }
 
 #search-input input:focus {
@@ -21,18 +22,28 @@ page-hello-ionic {
 .search-box {
     margin: auto;
     text-align: center;
-    font-size: 30px;
+    font-size: 26px;
     margin-top: 10px;
     margin-bottom: 5px;
+    
+}
+
+.list-item {
+    h2 {
+        color: #eaaa00;
+    }
+    p {
+        color: #ffffff;
+    }
 }
 
 /*header*/
 .header {
     z-index: 2;
-    background-color: #e0af5d;
+    background-color: #eaaa00;
     height: 50px;
     display: flex;
-    box-shadow: 10px 10px 10px 10px black;
+    
 }
 
 .toolbar-background {
@@ -195,8 +206,7 @@ page-hello-ionic {
 }
 
 .list_divider {
-    margin-bottom: -10%
-    margin-topL -10%
+    margin-bottom: -4%;
 }
 
 .description {

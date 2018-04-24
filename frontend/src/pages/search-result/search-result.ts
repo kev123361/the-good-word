@@ -2,10 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {environment } from '../../environments/environment';
 
-import instantsearch from 'instantsearch.js'
-import { searchBox } from 'instantsearch.js/es/widgets'
-//import { hits } from 'instantsearch.js/es/widgets'
-import { analytics } from 'instantsearch.js/es/widgets'
+import {DetailPage} from '../detail/detail';
 
 /**
  * Generated class for the SearchResultPage page.
@@ -28,49 +25,17 @@ export class SearchResultPage implements OnInit {
   }
 
   ngOnInit() {
-    /* const options = environment.algolia;
-
-    this.search = instantsearch(options);
-
-    this.search.addWidget(
-      searchBox({
-        container: '#search-box',
-        autofocus: false,
-        placeholder: 'placeholder',
-        magnifier: false,
-        searchOnEnterKeyPressOnly: true,
-        reset: false
-      })
-    ); */
-
-    /* this.search.addWidget(
-      hits({
-        container: '#hits',
-        templates: {
-          empty: 'No results',
-          item: '<strong>Result {{objectID}}</strong>: {{{_highlightResult.name.value}}}'
-        }
-      })
-    ); */
-
-    /* this.search.addWidget(
-      analytics({
-        pushFunction: (query, state, results) => {
-          console.log(query)
-          console.log(state)
-          console.log(results)
-          this.resultList = results.hits;
-        }
-      })
-    )
-
-    this.search.start(); */
+    
   }
 
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchResultPage');
+  }
+
+  itemSelected(item) {
+    this.navCtrl.push(DetailPage, {item: item});
   }
 
 }

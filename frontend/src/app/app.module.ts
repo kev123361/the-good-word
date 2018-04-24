@@ -20,6 +20,10 @@ import { SearchResultPage } from '../pages/search-result/search-result';
 
 import { GooglePlus } from '@ionic-native/google-plus';
 import { LoginPage } from '../pages/login/login';
+import { DetailPageModule } from '../pages/detail/detail.module';
+import { LoginPageModule } from '../pages/login/login.module';
+import { PlaceholderInfoPageModule } from '../pages/placeholder-info/placeholder-info.module';
+import { SearchResultPageModule } from '../pages/search-result/search-result.module';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBiTz1cNiCndam8NFKy0qVhvVGfO1F1Dqw",
@@ -44,17 +48,17 @@ export const environment = {
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage,
-    PlaceholderInfoPage,
-    DetailPage,
-    SearchResultPage,
-    LoginPage
+    ListPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    DetailPageModule,
+    LoginPageModule,
+    PlaceholderInfoPageModule,
+    SearchResultPageModule,
     AngularFireAuthModule
   ],
   bootstrap: [IonicApp],

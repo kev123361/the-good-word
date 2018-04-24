@@ -34,32 +34,35 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary: #003057,
+  secondary: #eaaa00,
+    danger: #f53d3d,
+    light: #f4f4f4,
+    dark: #222
+    
 );
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
+$toolbar-ios-title-text-color: white;
+$font-family-ios-base: "Montserrat";
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 $toolbar-md-title-text-color: white;
+$background-color: #003057;
+$font-family-md-base: "Monteserrat";
 
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
+$font-family-wp-base: "Montserrat";
 
 
 
@@ -86,3 +89,4 @@ $toolbar-md-title-text-color: white;
 
 @import "roboto";
 @import "noto-sans";
+
