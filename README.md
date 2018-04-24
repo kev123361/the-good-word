@@ -32,8 +32,12 @@ To install package dependencies, navigate to the frontend directory and in CLI r
 
 `npm install`
 
-### Instructions to run Ionic and building
-Make sure to have the latest version of Ionic framework. For more information on Ionic see: https://ionicframework.com/getting-started
+Then, navigate to the backend directory and in CLI run:
+
+`npm install`
+
+### Instructions to build application and run Ionic
+Make sure to have the latest version of Ionic framework and Node.js. For more information on Ionic see: https://ionicframework.com/getting-started
 
 To build for in-browser testing, use Ionic’s serve command from the frontend directory:
 
@@ -44,24 +48,33 @@ To run in an emulator or native device, use the Cordova plugin:
 `ionic cordova run android`
 `ionic cordova run ios`
 
-
 ## Maintenance
 
 ### Events Script
+
+The facebook and rss scripts can be run manually to update firebase with the latest events. To run the firebase script, navigate to the backend folder and, from the command prompt, run:
+
+`node facebook/fb.js`
+
+To run the rss script, run:
+
+`Node rss/rss.js`
+
+These scripts will cause the firebase instance to be updated.
+
 ### Cloud Functions
 
 Cloud functions are utilized to update events between Firebase and the Algolia full-text search service. When new functions are added to Firebase’s database, an event-listener triggers a function to update Algolia.  
 
-Please note, to make changes in this area of the application, you must navigate to the functions directory and install all node dependencies specific to updating cloud functions: 
+Please note, to make changes in this area of the application, you must navigate to the functions directory and install all node dependencies (noted in this directory’s `package.json`) specific to updating cloud functions: 
 
 `cd the-good-word/backend/firebase/functions/`
-`npm install’
+`npm install`
 
 
 If any changes are made in the index.js cloud functions file (the-good-word/backend/firebase/functions/index.js) they can be deployed with the following command.
 
 `firebase deploy --only functions`
-
 
 ## Troubleshooting
 
